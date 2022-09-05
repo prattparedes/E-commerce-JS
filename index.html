@@ -8,17 +8,36 @@
     <title>Librería Virtual Pratt</title>
     <link rel="stylesheet" href="./CSS/styles.css">
     <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
 </head>
-
 <body>
     <section id="landing">
         <nav>
             <div class="nav__container">
                 <img src="./CSS/Assets/Library.svg" class="nav__logo" alt="">
                 <ul class="nav__links">
-                    <a href="" class="nav__link">Home</a>
+                    <a href="#" class="nav__link">Home</a>
                     <a href="" class="nav__link">Contact</a>
-                    <a href="" class="nav__link nav__link--primary">Books</a>
+                    <a href="#features" class="nav__link nav__link--primary">Books</a>
+                </ul>
+                <button class="button__menu" onclick="openMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div class="menu__backdrop">
+                <button class="button__menu button__menu--close" onclick="closeMenu()">
+                    <i class="fas fa-times"></i>
+                </button>
+                <ul class="menu__links">
+                    <li class="menu__list">
+                        <a class="menu__link" href="#" onclick="closeMenu()">Home</a>
+                    </li>
+                    <li class="menu__list">
+                        <a class="menu__link" href="#features" onclick="closeMenu()">Books</a>
+                    </li>
+                    <li class="menu__list">
+                        <a class="menu__link no-cursor">Contact</a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -26,7 +45,7 @@
             <div class="header__container">
                 <div class="header__description">
                     <h1>America's most awarded online library platform</h1>
-                    <h2>Find your dream book with <span class="blue--text"">Library</span></h2>
+                    <h2>Find your dream book with <span class="blue--text">Library</span></h2>
                     <a href=" #features"><button class="header__button">Browse Books</button></a>
                             <figure class="header__img--wrapper">
                                 <img src="./CSS/Assets/undraw_bibliophile_re_xarc.svg" class="header__img" alt="">
@@ -127,7 +146,7 @@
         <section id="features">
             <div class="container">
                 <div class="row">
-                    <h2 class="section__title"> Featured <span class="blue--text">Books</span></h2>
+                    <h2 class="section__title">Latests<span class="blue--text">&nbspBooks</span></h2>
                     <div class="books">
                         <div class="book">
                             <figure class="book__img--wrapper">
@@ -254,7 +273,7 @@
                     <a href="#" class="footer__link no-cursor">Contact</a>
                 </div>
                 <div class="footer__copyright">
-                    Copyright © 2021 Library
+                    Copyright &copy; 2021 Library
                 </div>
             </div>
         </div>
