@@ -99,6 +99,15 @@ nav{
     border: none;
     color: #2a2fb7;
     cursor: pointer;
+    display: none;
+}
+
+.button__menu:hover{
+    opacity: 0.8;
+}
+
+.button__menu:active{
+    transform: translateY(1px)
 }
 
 .menu__backdrop{
@@ -110,14 +119,17 @@ nav{
     display: flex;
     align-items: center;
     justify-content: center;
-    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 300ms ease;
 }
 
 /* Cuando el menu sea abierto */
 
 .menu--open .menu__backdrop {
     display: flex;
-
+    visibility: visible;
+    opacity: 1;
 }
 
 .button__menu--close{
@@ -125,7 +137,7 @@ nav{
     position: absolute;
     display: block;
     top: 10px;
-    right: 20px;
+    right: 40px;
     padding: 8px;
 }
 
@@ -399,16 +411,58 @@ footer{
     transform: scale(1.05);
 }
 
-/* Responsividad */
+/* Responsividad Small phones large smartphones*/
 
 @media (max-width: 550px) {
     .nav__links {
         display: none;
     }
+
+    .button__menu {
+        display: block;
+    }
 }
 
-@media (min-width: 550px) {
-    .button__menu {
-        display: none;
+/* small phones, Tablets, and large phones */
+
+@media (max-width: 768px) {
+    .header__description{
+        padding: 0 24px;
+    }
+
+    h1{
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    .header__button {
+        font-size: 18px;
+    }
+
+    .highlights__wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .highlight{
+        width: 100%;
+    }
+
+    .highlight:not(:last-child) {
+        margin-bottom: 24px;
+    }
+
+    .books{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .book {
+        width: 50%;
     }
 }
