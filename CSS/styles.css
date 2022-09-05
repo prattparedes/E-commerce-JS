@@ -7,6 +7,11 @@
     box-sizing: border-box;
 }
 
+body{
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
 a{
     text-decoration: none;
 }
@@ -15,11 +20,21 @@ h1{
     font-size: 56px;
     margin-bottom: 24px;
     color: #2a2fb7;
+    text-align: center;
 }
 
 h2{
     font-size: 32px;
     margin-bottom: 32px;
+    text-align: center;
+}
+
+p{
+    line-height: 1.5;
+}
+
+section:nth-child(even) {
+    background-color: rgba(42, 47, 183,0.1);
 }
 
 /* Sección NAV */
@@ -91,20 +106,26 @@ header{
     cursor: pointer;
 }
 
+.header__button:active{
+    transform: translateY(1px)
+}
+
 .header__container{
     width: 100%;
+    max-width: 720px;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    margin: 0 auto;
 }
 
 .header__description{
-    width: 60%;
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .blue--text{
@@ -113,10 +134,90 @@ header{
 
 .header__img{
     width: 100%;
+    height: 100%;
 }
 
 .header__img--wrapper{
-    padding: 20px;
-    flex: 1;
+    padding: 24px;
     height: 100%;
+    max-height: 50vh;
+    flex: 1;
+    z-index: 2;
+}
+
+.container{
+    padding: 56px 0;
+}
+
+.row{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Sección Highlights */
+
+.highlight{
+    padding: 0 24px;
+    width: calc(100% / 3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.highlights__wrapper{
+    display: flex;
+}
+
+.highlight__img{
+    border: 2px solid #2a2fb7;
+    border-radius: 4px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 24px;
+    font-size: 32px;
+    color: #2a2fb7;
+}
+
+.highlight__subtitle{
+    font-size: 20px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.highlight__para{
+    font-size: 16px;
+    text-align: center;
+    max-width: 280px;
+}
+
+#highlights {
+    position: relative;
+}
+
+#highlights::before,
+#highlights::after {
+    background: url(./Assets/wave.svg);
+    content: "";
+    position: absolute;
+    width: 101vw;
+    height: 12vw;
+    left: 0;
+    z-index: 1;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+#highlights::before{
+    transform: translateY(-100%);
+    top: 1px;
+}
+
+#highlights::after {
+    transform: translateY(100%) rotate(180deg);
+    bottom: 1px;
 }
