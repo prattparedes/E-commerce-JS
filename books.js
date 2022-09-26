@@ -2,10 +2,10 @@ function renderBooks(filter) {
   const booksWrapper = document.querySelector('.books')
   const books = getBooks()
   if (filter === 'LOW_TO_HIGH') {
-    const filteredBooks = books.sort((a, b) => a.originalPrice - b.originalPrice)
+    const filteredBooks = books.sort((a, b) => (a.salePrice || a.originalPrice) - (b.salePrice || b.originalPrice))
   }
   else if (filter === 'HIGH_TO_LOW') {
-    const filteredBooks = books.sort((a, b) => b.originalPrice - a.originalPrice)
+    const filteredBooks = books.sort((a, b) => (b.salePrice || b.originalPrice) - (a.salePrice || a.originalPrice))
   }
   else if (filter === 'RATING') {
     const filteredBooks = books.sort((a, b) => b.rating - a.rating)
